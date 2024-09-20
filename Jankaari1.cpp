@@ -3,7 +3,8 @@ public class Demo
 --Compile  javac Demo.java
 --run java Demo
 
-Do using single line  
+Using single command- java Demo.java
+Do using single line compile and run
     -- javac Demo.java; java Demo
 
 Multiple inheritance in java doesnt work:- 
