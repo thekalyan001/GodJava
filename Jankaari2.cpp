@@ -204,4 +204,141 @@ Aliean obj = new Aliean();
 var obj = new Aliean();
 
 
-------------------------------
+-------------------------12:47:00-----SEALED classes
+Abstract vs final class
+Abstract- base class and some defined methods, its ment to be inherited.
+final - no class can inherit. its final class.
+
+SEALED class- which subclass can inherit base class.
+💡 Rule1. Subclass must extend this sealed class and it should be either final, sealed or non-sealed
+
+usecase:- in payment we can allow this, that is allowed.  Laptop, mobile, Desktop can extend Computer
+
+sealed class A permits B, C{  //allow which class can extend
+}
+
+non-sealed class B extends A {  //non sealed class can be extended 
+}
+
+final class C extends A { //can't be extended
+}
+
+class D extends B {
+}
+
+------in case of interface (we've two option for child class to have either sealed or non-sealed as interface cant be final)
+sealed interface X permits Y{
+}
+sealed interface Y extends X {
+} 
+
+
+
+
+
+---------------------12:57:00---------RECORDED classes 📷
+
+classes which id used for storage data purposes. like calling to db and getting obj and storing json format.
+and the varialbe hold data we call as STATE.
+
+
+
+See below class and then we'll convert this to Record class 🔥
+
+import java.util.Objects;
+
+class Alien {
+    private final int id;  
+    private final String name;
+
+    public Alien(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + id;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        return result;
+    }
+
+    // equal method behaviour change to check if value same then ob is same.
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Alien alien = (Alien) obj;
+        return id == alien.id && Objects.equals(name, alien.name);
+    }
+
+    // this is when we print objects when obj print then do this.
+    @Override
+    public String toString() {
+        return "Alien [id=" + id + ", name=" + name + "]";
+    }
+    
+    
+    
+    
+} 
+
+public class Demo {
+    public static void main(String[] args) {
+        Alien ob1 = new Alien(1, "Zorg");
+        Alien ob2 = new Alien(1, "Zorg");
+
+        System.out.println(ob1.getName());
+        System.out.println(ob1);
+        System.out.println(ob1.equals(ob2));
+    }
+}
+
+
+So just to hold data we're creating so many methods see above class. 😏
+so we'll do all of this in single  line 🤐, yes in single line
+
+in RECORDED class by dafault varialbes are final. 
+--There is no setter n record class as its read only to store data.
+--to read varialbes we can call ob.variable()
+
+record Alien(int id, String name) {}  🤡 //every avobe methods are implemented here behind the scene.
+ 
+
+public class Demo {
+    public static void main(String[] args) {
+        Alien ob1 = new Alien(1, "Zorg");
+        Alien ob2 = new Alien(1, "Zorg");
+        
+        System.out.println(ob1.equals(ob2));
+        System.out.println(ob1.name());
+        System.out.println(ob1);
+    }
+}
+
+---cannonical construtor- which have same name as class which have same number of fields as class.
+it is automatically genered by compiler, but we can also write in order to do some checks within construtor.
+
+eg;- 
+record Alien(int id, String name) {
+    if(id==0)
+        throw new IllegalArgumentException("id cant be zero");
+    // this.id=id
+    // this.name=name  these things are by default in this this consturctor
+}
+
+
+
+------------UNIT TESTING  (JUNIT 5)-- 13:13:00
+while developing software doing unit testing.
+
