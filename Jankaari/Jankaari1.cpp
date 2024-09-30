@@ -1,3 +1,7 @@
+Install Java,  Install Maven, Install vs code.
+Install necessary extension for java in vscode
+vscode:extension/vscjava.vscode-java-pack
+
 Demo.Java
 public class Demo
 --Compile  javac Demo.java
@@ -53,7 +57,7 @@ by default it is type Default (can be accessed in same package)
 
 sub class means class which extends the Parent wala (in which we ve var/fn)
 
-                                public      private  protected  Default
+ can access                    public      private  protected  Default
 same class                      yes         yes       yes       yes
 same pkg subclass               yes         no        yes       yes
 same pkg non-sub class          yes         no        yes       yes

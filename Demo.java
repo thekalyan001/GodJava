@@ -1,53 +1,17 @@
-import java.util.Objects;
+import java.util.LinkedList;
+import java.util.Queue;
 
-class Alien {
-    private final int id;
-    private final String name;
+public class Demo{
 
-    public Alien(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
- 
-
-    // equal method behaviour change to check if value same then ob is same.
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Alien alien = (Alien) obj;
-        return id == alien.id && Objects.equals(name, alien.name);
-    }
-
-    // this is when we print objects
-    @Override
-    public String toString() {
-        return "Alien [id=" + id + ", name=" + name + "]";
-    }
-    
-    
-    
-    
-}
-// record Alien(int id, String name) {
-
-// } 
-
-public class Demo {
     public static void main(String[] args) {
-        Alien ob1 = new Alien(1, "Zorg");
-        Alien ob2 = new Alien(1, "Zorg");
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(10);
+        queue.add(20);
+        System.out.println("Front element is: " + queue.peek());
+        System.out.println("Removed element: " + queue.remove());
+        System.out.println("Queue after removal: " + queue);
+        System.out.println("Is the queue empty? " + queue.isEmpty());
 
-        System.out.println(ob1.getName());
-        System.out.println(ob1);
-        System.out.println(ob1.equals(ob2));
+      
     }
 }
