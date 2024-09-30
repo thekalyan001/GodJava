@@ -697,6 +697,7 @@ public static void main(String[] args) {
     System.out.println("Is the queue empty? " + queue.isEmpty());      
 }
 
+Check- DataStructures ->QueueCode.java
 ------------Tree 🌲 20:49:00
 
 
@@ -707,3 +708,62 @@ public static void main(String[] args) {
 
 
 BST - Left side lower than root, right side larger than root.
+
+Check- DataStructures ->TreeCode.java
+
+
+
+
+--------------Git is version control sys. 21:00:00
+Its distributed version control sys (means copy of code in machine + remote origin).
+its collaborative platform
+
+download git.
+git config -- global user.name "kalyan"
+git config -- global user.email "kalyan23@gmail.com"
+
+-------------------------------------------
+git init -b main  (git repo created with main brnach name)
+git add .
+git status // to check status
+git commit -m "first commit"
+git remote add origin https://github.com/kalyan23/Jankaari.git
+git push -u origin main
+--------------------------------------------
+
+Working dir ->Staging area ->Remote 🏃🏻‍♂️
+
+git log - list of commits, msg, commitId (q to quit)
+remove file from git without tracking- git rm --caches filename.txt 
+
+git clone github.com/url
+
+ssh(22:20:00)-- we can also push using ssh
+
+--------------------------Tags--------------------------
+annotated tags: want to send info to user and more official.
+lightweight tags: want to send info to user and less official.
+
+git tag -a v1.0 -m "`st release"
+git tag  //show tag
+git push origin v1.0
+
+git show v1.0  //it will show who done this tag commit
+
+
+---------------create branch using 2 ways
+git switch -c branchname
+git branch -b branchname
+
+git branch // list of all branches
+git branch -d OtherBranchname // delete a branch
+
+
+
+----Merge branch or data to main
+git pull origin main
+git checkout main
+git merge branchname
+
+git push origin main
+---------------------
