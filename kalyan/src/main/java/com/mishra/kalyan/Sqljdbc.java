@@ -16,7 +16,7 @@ package com.mishra.kalyan;
      public static void main(String[] args) {
          String query = "CREATE TABLE Employee (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));";
          try {
-             Class.forName("com.mysql.cj.jdbc.Driver");
+             Class.forName("com.mysql.cj.jdbc.Driver");  //forName load the driver
              Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kalyan", "root", "Root@123");
              Statement stmt = con.createStatement();
  
