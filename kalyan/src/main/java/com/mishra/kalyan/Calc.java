@@ -17,7 +17,7 @@ public class Calc {
 
     public static void main(String[] args) {
         Calc ob = new Calc();
-        System.out.println(ob.add(10,10));
+        System.out.println("Output is: "+ob.add(10,10));
 	}
 
 }
