@@ -14,15 +14,6 @@ public class SqServlet extends HttpServlet  {
 	private static final long serialVersionUID = 1L;
 
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-		int k=0;
-		Cookie cookies[] = req.getCookies(); // cookies so its array
-		for(Cookie c:cookies) {
-			if(c.getName().equals("k"))
-				k=Integer.parseInt(c.getValue());
-		}
-		k=k*k;
-		
-		PrintWriter out = res.getWriter();
-		out.println("Result is:"+k); 
+		int k= 9/0;
 	}
 }
