@@ -36,7 +36,7 @@ CALCULATOR
 Demo.java   
     import tools.Calc
     import tools.AdvCalc
-    import java.util.ArrayList;
+    import java.util.ArrayList; // there is java folder in which util folder and in which ArrayList classs is there
 
     public class Demo{
         public static void main(String[] args) {
@@ -55,7 +55,7 @@ Demo.java
 --------------------------access modefier----public, default, private, protected
 by default it is type Default (can be accessed in same package)
 
-sub class means class which extends the Parent wala (in which we ve var/fn)
+sub class means class which extends the Parent wala (in which we've var/fn)
 
  can access                    public      private  protected  Default
 same class                      yes         yes       yes       yes
@@ -89,7 +89,7 @@ class Student {
 
 
 
-💡 subclass as obj of superclass
+💡 subclass as obj of superclass (but subclass must extend superclass)
 class Computer{}
 class Laptop extends Computer{}
 public class Main(){
@@ -125,13 +125,13 @@ at run time.  This overall is called Dynamic method dispatch.
 
 
 ----------Final keyword- (can used for variable, method, class)
-Variale which doesnt change- (eg- pie 3.14)
-Final class Calc  ->so this class cant inherit. no one can extend it.
+Variale which doesn't change- (eg- pie 3.14);
+Final class Calc  ->so this class can't inherit. no one can extend it.
 public final void show() ->this method cant override in child class.
 
 ---------7.41.00  Wrapper class
-For premitive data type it doesn't extends from Object class.
-which makes java 99.9% obj oridned language.  But other collection comes from Object class.
+For premitive data type (int, float) it doesn't extends from Object class.
+which makes java 99.9% obj oriened language.  But other collection comes from Object class.
 
 we have concept of Wraper class which is object class for these premitive data type.
 
@@ -150,7 +150,7 @@ int num2 = num1.intValue(); // unboxing
 int num2 = num1; // auto unboxing
 
 ----------------Abstract keyword---------
-We cant create obj of abstrct class. 
+We can not create obj of abstrct class. 
 abstract class may or may not be abstract method.
 if there is abstract method than Child which inherit must implement that method.
 
@@ -226,13 +226,12 @@ public class Demo {
 
 
 
----abstract class anonymous class  (8:12:40)
-abstract class A 
+---------------abstract class anonymous class  (8:12:40)
+abstract class A{
     public void show() {
         System.out.println("in A show");
     }
 
-    
     public void show1() {
         System.out.println("in AAA show");
     }
@@ -253,7 +252,7 @@ public class Demo {
 
 ->Interface is a design and it only tells which methods you need but your job is to implement that.
 ->all varialbe in Interface are Final and static.
-->A class can implements Multiple interfaces, where as c class can't extends multiple abstract class.
+->A class can implements Multiple interfaces, where as a class can't extends multiple abstract class.
 -> .class - class ->extends
    .class - interface ->implements
    .interface - interface ->extends
